@@ -28,12 +28,12 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+  //The difference is that count is a local variable within the function counterMaker. In counter2, count is a global variable. This means that count will reset every time the function is called while counter2 will not reset count.
   2. Which of the two uses a closure? How can you tell?
-  
+  //Counter2 code has closure because it has to reach out to the global scope to determine what count is.
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
-*/
+*/ // Counter1 would be preferable when you need to reset progress every time you want to call the function. Counter2 would be preferable when trying to record progress.
 
 // counter1 code
 function counterMaker() {
@@ -62,8 +62,9 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    const randomNumber = Math.round(Math.random() * 2);
+    return randomNumber;
 }
 
 
@@ -81,8 +82,17 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(parameterOne, numberOfInningsToBePlayed){
+  //I need to keep track of team scores. The default scores should be 0 when a game starts
+  let home = 0;
+  let away = 0;
+  //We need to run the random inning formula to determine who wins the point.
+  for(let i = 0; i < numberOfInningsToBePlayed; i++){
+    return parameterOne;
+  }
+  //This will run the loop but I need to figure out how to grab that answer it add a point to the team. If function should work, but where to place it...
+  console.log(`Home: ${home}`);
+  console.log(`Away: ${away}`);
 }
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
@@ -90,8 +100,18 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(input) {
+  let home = 0;
+  let away = 0;
+  for(let i = 0; i < input; i++){
+    if(input = 1){
+      return home + 1;
+    } else {
+      return away + 1;
+    }
+  }
+  console.log(`Home: ${home}`);
+  console.log(`Away: ${away}`);
 }
 
 
